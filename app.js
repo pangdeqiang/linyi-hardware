@@ -4,8 +4,8 @@ const CFG={
   hours:"08:00 – 20:00",
   place:"Kajola, Ogun State",
   nameZh:"临沂五金供应商",
-  nameEn:"Linyi Hardware Supplier",
-  addrEn:"WH4Q+7R, Kajola 121107, Ogun State, Nigeria",
+  nameEn:"linyihardwarestore.com",
+  addrEn:"WH4Q+7R, Kajola, Ogun State, Nigeria",
   mapUrl:"https://maps.app.goo.gl/GJhfdaFFiNZYHAkG7",
   mapEmbed:"https://maps.google.com/maps?q=WH4Q%2B7R%20Kajola%2C%20Ogun%20State%2C%20Nigeria&z=16&output=embed",
   smsTo:"08163394568"
