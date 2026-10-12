@@ -1,0 +1,566 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>
+<title>临沂五金建材 Linyi Hardware</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: sticky graphite bar, hazard-stripe hero, a dense bilingual price list with photo stacks, then booking and contact. */
+:root{
+  --bg:#EBEEEE;
+  --surface:#F8F9F9;
+  --ink:#1B2227;
+  --muted:#546068;
+  --line:#CBD2D5;
+  --accent:#F0B400;
+  --accent-ink:#1B2227;
+  --bar:#1B2227;
+  --bar-ink:#F2F4F4;
+  --stripe:#1B2227;
+  --focus:#1B6FD9;
+  --bad:#B3341F;
+  --display:"Barlow Condensed","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  --text:"Barlow","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#12171A;--surface:#1B2227;--ink:#E7ECEE;--muted:#9AA6AD;--line:#2E383E;
+    --accent:#F0B400;--accent-ink:#1B2227;--bar:#0B0F11;--bar-ink:#E7ECEE;--stripe:#0B0F11;--focus:#6AA9FF;--bad:#EF8A78;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12171A;--surface:#1B2227;--ink:#E7ECEE;--muted:#9AA6AD;--line:#2E383E;
+  --accent:#F0B400;--accent-ink:#1B2227;--bar:#0B0F11;--bar-ink:#E7ECEE;--stripe:#0B0F11;--focus:#6AA9FF;--bad:#EF8A78;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:16px;line-height:1.55}
+.w{max-width:1080px;margin:0 auto;padding-inline:16px}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);font-weight:700;text-wrap:balance;margin:0;line-height:1.1}
+h2{font-size:clamp(1.7rem,4.5vw,2.2rem)}
+section{scroll-margin-top:112px}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bar);color:var(--bar-ink)}
+.bar{max-width:1080px;margin:0 auto;padding:8px 16px;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"brand lang" "nav nav";gap:2px 12px;align-items:center}
+.brand{grid-area:brand;font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+nav{grid-area:nav;display:flex;gap:2px;overflow-x:auto;margin-inline:-8px}
+nav a{padding:6px 10px;border-radius:4px;text-decoration:none;font-size:.95rem;white-space:nowrap}
+nav a:hover{background:rgba(255,255,255,.12)}
+.lang{grid-area:lang;display:flex;border:1.5px solid var(--bar-ink);border-radius:6px;overflow:hidden}
+.lang button{border:0;background:transparent;color:var(--bar-ink);padding:5px 12px;cursor:pointer;font-weight:600;font-size:.9rem;min-width:3.2rem}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+@media (min-width:720px){
+  .bar{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"brand nav lang";gap:16px;padding-block:10px}
+  nav{margin-inline:0}
+}
+
+/* hero */
+.stripe{height:12px;background:repeating-linear-gradient(-45deg,var(--accent) 0 14px,var(--stripe) 14px 28px)}
+.hero{padding-block:28px 12px}
+.hero h1{font-size:clamp(2.1rem,7vw,3.8rem);max-width:16em}
+.btn{border:0;border-radius:6px;padding:10px 16px;background:var(--accent);color:var(--accent-ink);font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.sm{padding:6px 12px;font-size:.9rem}
+.btn:disabled{opacity:.6;cursor:default}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.pn{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:var(--surface);border:1.5px solid var(--line);border-radius:8px;padding:8px 8px 8px 14px}
+.pn .k{color:var(--muted);font-size:.9rem}
+.pn .k,.pn .btn{white-space:nowrap}
+.pn .num{font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:.02em;text-decoration:none;font-variant-numeric:tabular-nums}
+
+/* products */
+.sec{padding-block:36px 8px}
+.sec h2{margin-bottom:6px}
+.note{color:var(--muted);margin:0 0 16px;font-size:.95rem}
+.tools{display:grid;gap:12px;margin-bottom:12px}
+input[type="search"],input[type="text"],input[type="tel"],input[type="date"],select,textarea{width:100%;background:var(--surface);border:1.5px solid var(--line);border-radius:6px;padding:10px 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--surface);border:1.5px solid var(--line);border-radius:99px;padding:5px 12px;cursor:pointer;font-size:.92rem}
+.chip .n{color:var(--muted);font-variant-numeric:tabular-nums;margin-inline-start:4px}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chip[aria-pressed="true"] .n{color:var(--bg);opacity:.75}
+.count{color:var(--muted);font-size:.92rem;margin:4px 0 8px;font-variant-numeric:tabular-nums}
+.grp{margin-top:20px}
+.grp h3{font-size:1.35rem;padding:6px 12px;background:var(--accent);color:var(--accent-ink);border-radius:4px 4px 0 0;display:flex;justify-content:space-between;gap:12px}
+.grp h3 span{font-family:var(--text);font-size:.9rem;font-weight:600;align-self:center}
+.list{background:var(--surface);border:1.5px solid var(--line);border-top:0;border-radius:0 0 4px 4px}
+.hd,.row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1.6fr) 8.5rem;gap:2px 16px;padding:9px 12px;align-items:baseline}
+.hasmd .hd,.hasmd .row{grid-template-columns:72px minmax(0,1.4fr) minmax(0,1.6fr) 8.5rem;align-items:center}
+.hd{color:var(--muted);font-size:.85rem;border-bottom:1.5px solid var(--line)}
+.row+.row{border-top:1px solid var(--line)}
+.row .nm{font-weight:600;overflow-wrap:anywhere}
+.row .sp{color:var(--muted);overflow-wrap:anywhere}
+.row .pr,.hd .pr{text-align:end}
+.price{font-family:var(--display);font-weight:700;font-size:1.4rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price small{font-family:var(--text);font-weight:400;font-size:.82rem;color:var(--muted);margin-inline-start:3px}
+.price.ask{font-family:var(--text);font-size:.95rem;font-weight:600;color:var(--muted)}
+@media (max-width:639px){
+  .hd{display:none}
+  .row{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"nm pr" "sp sp"}
+  .hasmd .row{grid-template-columns:72px minmax(0,1fr) auto;grid-template-areas:"md nm pr" "md sp sp";align-items:center}
+  .row .md{grid-area:md}
+  .row .nm{grid-area:nm}.row .pr{grid-area:pr}.row .sp{grid-area:sp}
+  .row .sp:empty{display:none}
+}
+.empty{padding:22px;border:1.5px dashed var(--line);border-radius:6px;color:var(--muted);display:grid;gap:12px;justify-items:start}
+
+/* photo stack: the front photo with the next ones peeking out behind it */
+.md{position:relative;min-height:44px;display:flex;align-items:center}
+.stack{position:relative;display:block;width:66px;height:56px;padding:0;border:0;background:none;cursor:zoom-in}
+.stack img{position:absolute;left:0;top:0;width:56px;height:56px;max-width:none;object-fit:cover;border-radius:8px;border:1.5px solid var(--surface);background:var(--line);box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.stack img:nth-of-type(1){z-index:3}
+.stack img:nth-of-type(2){z-index:2;transform:translateX(7px) scale(.9)}
+.stack img:nth-of-type(3){z-index:1;transform:translateX(13px) scale(.8)}
+.stack .cnt{position:absolute;z-index:4;left:5px;bottom:5px;background:rgba(0,0,0,.68);color:#fff;font-size:.72rem;line-height:1;padding:3px 6px;border-radius:99px;font-variant-numeric:tabular-nums}
+.addp{cursor:pointer}
+.addp.big{width:100%;border:1.5px dashed var(--muted);background:transparent;border-radius:8px;padding:8px 4px;font-size:.8rem;color:var(--muted)}
+.addp.small{position:absolute;right:-2px;top:-4px;z-index:5;width:26px;height:26px;border-radius:50%;border:0;padding:0;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:1.1rem;line-height:1}
+.editbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:10px 12px;margin-bottom:12px;border:1.5px dashed var(--accent);border-radius:8px;background:var(--surface)}
+.hint{color:var(--muted);font-size:.9rem;margin:0}
+.editmsg{min-height:1.4em;margin:0 0 8px;font-size:.92rem}
+
+/* photo viewer */
+#lb{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.92);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:calc(env(safe-area-inset-top,0px) + 12px) 16px calc(env(safe-area-inset-bottom,0px) + 12px)}
+#lb img{max-width:100%;max-height:66vh;object-fit:contain;border-radius:6px}
+#lbx{position:absolute;right:calc(12px);top:calc(env(safe-area-inset-top,0px) + 8px);width:44px;height:44px;border-radius:50%;border:1.5px solid #fff;background:transparent;color:#fff;font-size:1.5rem;line-height:1;cursor:pointer}
+.lbrow{display:flex;align-items:center;gap:14px;max-width:100%}
+.lbrow button{width:44px;height:44px;border-radius:50%;border:1.5px solid #fff;background:transparent;color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;flex:none}
+#lbc{text-align:center;min-width:0;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+#lbe{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+#lbe .btn.ghost{color:#fff;border-color:#fff}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px 28px;margin-top:12px}
+.svc div{border-top:3px solid var(--ink);padding-top:10px}
+.svc h3{font-size:1.3rem;margin-bottom:4px}
+.svc p{margin:0;color:var(--muted)}
+
+/* booking */
+.bk{display:grid;gap:14px;max-width:640px;background:var(--surface);border:1.5px solid var(--line);border-radius:8px;padding:18px}
+.bk label{display:grid;gap:4px;font-weight:600;font-size:.95rem}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.err{color:var(--bad);margin:0;min-height:1.4em;font-size:.95rem}
+#res{display:none;gap:10px}
+#res textarea{min-height:170px}
+.acts{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+
+/* contact */
+footer{margin-top:48px;background:var(--bar);color:var(--bar-ink);padding-block:28px 32px}
+footer h2{margin-bottom:14px}
+.ct{display:grid;gap:10px}
+.ct .pn{background:transparent;border-color:rgba(255,255,255,.28)}
+.ct .pn .k{color:rgba(255,255,255,.7)}
+.ct .btn.ghost{color:var(--bar-ink);border-color:var(--bar-ink)}
+.fine{margin:18px 0 0;font-size:.85rem;color:rgba(255,255,255,.7)}
+.sel{user-select:all}
+.ctw{display:grid;gap:24px;grid-template-columns:minmax(0,1fr);align-items:start}
+@media (min-width:720px){.ctw{grid-template-columns:minmax(0,1fr) auto;gap:40px}}
+.qr{background:#fff;padding:10px;border-radius:8px;width:176px}
+.qr svg{display:block;width:100%;height:auto}
+.qrcap{margin:10px 0 0;font-size:.9rem;color:rgba(255,255,255,.85);max-width:176px}
+.qrcol .btn.ghost{color:var(--bar-ink);border-color:var(--bar-ink);margin-top:10px}
+</style>
+
+<header class="top">
+  <div class="bar">
+    <div class="brand" data-i="brand"></div>
+    <nav aria-label="Sections">
+      <a href="#products" data-i="nav_products"></a>
+      <a href="#services" data-i="nav_services"></a>
+      <a href="#book" data-i="nav_book"></a>
+      <a href="#contact" data-i="nav_contact"></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language / 语言">
+      <button type="button" id="l-zh" aria-pressed="true">中文</button>
+      <button type="button" id="l-en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="stripe" aria-hidden="true"></div>
+  <section class="hero w">
+    <h1 data-i="h1"></h1>
+    <div class="cta">
+      <a class="btn" href="#products" data-i="cta_products"></a>
+      <a class="btn ghost" href="#book" data-i="cta_book"></a>
+    </div>
+  </section>
+
+  <section id="products" class="sec w">
+    <h2 data-i="h_products"></h2>
+    <p class="note" data-i="price_note"></p>
+    <div class="editbar" id="editbar" hidden>
+      <button type="button" class="btn sm ghost" id="edtog"></button>
+      <button type="button" class="btn sm" id="edsave" data-i="ed_save" hidden></button>
+      <button type="button" class="btn sm ghost" id="eddisc" data-i="ed_disc" hidden></button>
+      <span class="hint" id="edinfo"></span>
+    </div>
+    <p class="hint" id="edhint" data-i="ed_hint" hidden></p>
+    <p class="editmsg" id="edmsg" role="status"></p>
+    <div class="tools">
+      <input id="q" type="search" autocomplete="off" data-ip="search" aria-label="Search">
+      <div class="chips" id="chips"></div>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div id="out"></div>
+  </section>
+
+  <section id="services" class="sec w">
+    <h2 data-i="h_services"></h2>
+    <div class="svc">
+      <div><h3 data-i="s1_t"></h3><p data-i="s1_d"></p></div>
+      <div><h3 data-i="s2_t"></h3><p data-i="s2_d"></p></div>
+      <div><h3 data-i="s3_t"></h3><p data-i="s3_d"></p></div>
+    </div>
+  </section>
+
+  <section id="book" class="sec w">
+    <h2 data-i="h_book"></h2>
+    <p class="note" data-i="book_note"></p>
+    <div class="bk">
+      <div class="two">
+        <label for="bn"><span data-i="f_name"></span><input id="bn" type="text" autocomplete="name"></label>
+        <label for="bc"><span data-i="f_company"></span><input id="bc" type="text" autocomplete="organization"></label>
+      </div>
+      <div class="two">
+        <label for="bp"><span data-i="f_phone"></span><input id="bp" type="tel" autocomplete="tel" inputmode="tel"></label>
+        <label for="bw"><span data-i="f_wechat"></span><input id="bw" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+      </div>
+      <div class="two">
+        <label for="bs"><span data-i="f_service"></span>
+          <select id="bs"><option value="0" data-i="o0"></option><option value="1" data-i="o1"></option><option value="2" data-i="o2"></option></select></label>
+        <label for="bd"><span data-i="f_date"></span><input id="bd" type="date"></label>
+      </div>
+      <label for="bt"><span data-i="f_notes"></span><textarea id="bt" rows="3"></textarea></label>
+      <p class="err" id="er" role="alert"></p>
+      <div><button type="button" class="btn" id="go" data-i="make"></button></div>
+      <div id="res">
+        <label for="rt"><span data-i="res_label"></span><textarea id="rt" readonly></textarea></label>
+        <div class="acts">
+          <button type="button" class="btn" id="cp" data-i="copy_msg"></button>
+          <a class="btn ghost" id="sms" href="sms:08163394568" data-i="sms"></a>
+          <span class="hint" id="cs" role="status"></span>
+        </div>
+        <p class="hint" data-i="send_note"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="w">
+    <h2 data-i="h_contact"></h2>
+    <div class="ctw">
+      <div class="ct">
+        <div class="pn"><span class="k" data-i="phone"></span><a class="num" href="tel:08163394568">0816 339 4568</a><button type="button" class="btn sm ghost" data-copy="08163394568" data-i="copy"></button></div>
+        <div class="pn"><span class="k" data-i="phone"></span><a class="num" href="tel:09065120982">0906 512 0982</a><button type="button" class="btn sm ghost" data-copy="09065120982" data-i="copy"></button></div>
+        <div class="pn"><span class="k" data-i="wechat"></span><span class="num sel">LinYiWuJinJianCai</span><button type="button" class="btn sm ghost" data-copy="LinYiWuJinJianCai" data-i="copy"></button></div>
+      </div>
+      <div class="qrcol">
+        <div class="qr" role="img" aria-label="WeChat QR code"><svg viewBox="0 0 37 37"><path fill="#fff" d="M0 0h37v37h-37z"/><path stroke="#000" d="M2 2.5h7m3 0h1m3 0h3m1 0h1m1 0h1m2 0h1m2 0h7m-33 1h1m5 0h1m2 0h3m3 0h2m1 0h1m1 0h1m1 0h1m3 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h3m2 0h6m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m2 0h2m2 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h3m3 0h1m1 0h3m1 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h4m2 0h1m4 0h1m1 0h1m4 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h1m1 0h3m3 0h1m2 0h3m1 0h1m-24 1h1m1 0h5m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h3m1 0h5m-31 1h6m1 0h4m1 0h2m2 0h4m1 0h1m1 0h1m2 0h2m1 0h3m-32 1h1m1 0h6m3 0h7m2 0h1m4 0h2m1 0h1m1 0h2m-30 1h1m4 0h3m3 0h1m1 0h1m1 0h2m1 0h3m2 0h1m2 0h3m1 0h1m-33 1h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h3m2 0h2m3 0h1m2 0h3m1 0h1m-28 1h2m1 0h3m1 0h2m2 0h1m2 0h1m2 0h3m1 0h3m1 0h4m-32 1h2m2 0h5m2 0h5m3 0h2m3 0h2m2 0h1m1 0h1m-32 1h1m2 0h1m3 0h4m1 0h2m1 0h1m5 0h2m1 0h3m1 0h3m-31 1h1m1 0h3m1 0h3m1 0h1m3 0h4m4 0h1m1 0h2m1 0h4m1 0h1m-33 1h2m1 0h1m1 0h1m1 0h1m3 0h2m1 0h1m3 0h3m1 0h2m1 0h3m1 0h2m-31 1h1m1 0h3m1 0h1m2 0h2m2 0h3m2 0h1m1 0h3m4 0h2m1 0h2m-32 1h3m4 0h2m4 0h1m1 0h1m3 0h5m1 0h8m-31 1h1m3 0h4m1 0h1m6 0h2m5 0h1m1 0h1m1 0h1m1 0h1m-32 1h2m1 0h3m3 0h3m2 0h4m2 0h4m1 0h2m2 0h2m1 0h1m-33 1h1m1 0h1m3 0h3m2 0h1m1 0h1m3 0h3m1 0h2m2 0h1m1 0h1m1 0h3m-32 1h1m1 0h3m3 0h1m1 0h1m3 0h1m1 0h1m2 0h3m2 0h2m3 0h2m-31 1h1m1 0h5m2 0h1m1 0h1m1 0h1m3 0h1m1 0h1m4 0h5m-21 1h3m1 0h1m3 0h2m1 0h3m1 0h2m3 0h1m1 0h1m1 0h1m-33 1h7m2 0h1m4 0h4m2 0h1m2 0h2m1 0h1m1 0h1m1 0h2m-32 1h1m5 0h1m1 0h4m1 0h2m2 0h3m1 0h4m3 0h5m-33 1h1m1 0h3m1 0h1m1 0h5m1 0h3m4 0h1m2 0h6m1 0h2m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h5m2 0h1m9 0h5m-33 1h1m1 0h3m1 0h1m1 0h2m3 0h5m4 0h2m2 0h2m1 0h2m-31 1h1m5 0h1m3 0h2m3 0h1m2 0h1m2 0h1m1 0h2m1 0h1m1 0h3m-31 1h7m1 0h1m1 0h3m1 0h2m1 0h1m4 0h3m2 0h1m2 0h2"/></svg></div>
+        <p class="qrcap" data-i="qr_cap"></p>
+        <a class="btn sm ghost" href="https://u.wechat.com/EEkvch1uTOgFWUeDM-3xQqo?s=3" target="_blank" rel="noopener" data-i="wc_add"></a>
+      </div>
+    </div>
+    <p class="fine" data-i="foot"></p>
+  </div>
+</footer>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Photos" hidden>
+  <button type="button" id="lbx" aria-label="Close">×</button>
+  <img id="lbi" alt="">
+  <div class="lbrow">
+    <button type="button" id="lbp" aria-label="Previous">‹</button>
+    <div id="lbc"></div>
+    <button type="button" id="lbn" aria-label="Next">›</button>
+  </div>
+  <div id="lbe" hidden>
+    <button type="button" class="btn sm ghost" id="lbcover" data-i="lb_cover"></button>
+    <button type="button" class="btn sm ghost" id="lbdel" data-i="lb_del"></button>
+  </div>
+</div>
+<input type="file" id="fi" accept="image/*" multiple hidden>
+
+<script type="application/json" id="photos">{}</script>
+<script>
+const ITEMS=[{"c":"fast","n":["吊环","Lifting eye bolt"],"s":["M10","M10"],"u":["个","pc"],"p":3,"k":"吊环|M10|个"},{"c":"fast","n":["吊环","Lifting eye bolt"],"s":["M12","M12"],"u":["个","pc"],"p":5,"k":"吊环|M12|个"},{"c":"fast","n":["吊环","Lifting eye bolt"],"s":["M14","M14"],"u":["个","pc"],"p":6.5,"k":"吊环|M14|个"},{"c":"fast","n":["吊环","Lifting eye bolt"],"s":["M16","M16"],"u":["个","pc"],"p":7,"k":"吊环|M16|个"},{"c":"fast","n":["吊环","Lifting eye bolt"],"s":["M18","M18"],"u":["个","pc"],"p":8,"k":"吊环|M18|个"},{"c":"fast","n":["吊环","Lifting eye bolt"],"s":["M20","M20"],"u":["个","pc"],"p":10,"k":"吊环|M20|个"},{"c":"fast","n":["大门调节支架","Gate adjustment bracket"],"s":["组装尼龙夹轮用","For assembling nylon clamp wheels"],"u":["个","pc"],"p":18,"k":"大门调节支架|组装尼龙夹轮用|个"},{"c":"fast","n":["高强螺母","High-strength nut"],"s":["M8","M8"],"u":["个","pc"],"p":0.13,"k":"高强螺母|M8|个"},{"c":"fast","n":["高强螺母","High-strength nut"],"s":["M10","M10"],"u":["个","pc"],"p":0.24,"k":"高强螺母|M10|个"},{"c":"fast","n":["高强螺母","High-strength nut"],"s":["M27","M27"],"u":["个","pc"],"p":2.8,"k":"高强螺母|M27|个"},{"c":"fast","n":["钢丝绳卡扣","Wire rope clip"],"s":["M5","M5"],"u":["个","pc"],"p":1.5,"k":"钢丝绳卡扣|M5|个"},{"c":"fast","n":["钢丝绳卡扣","Wire rope clip"],"s":["M6","M6"],"u":["个","pc"],"p":1.5,"k":"钢丝绳卡扣|M6|个"},{"c":"fast","n":["钢丝绳卡扣","Wire rope clip"],"s":["M8","M8"],"u":["个","pc"],"p":20,"k":"钢丝绳卡扣|M8|个"},{"c":"fast","n":["金属夹子","Metal clip"],"s":["S","S"],"u":["个","pc"],"p":0.7,"k":"金属夹子|S|个"},{"c":"fast","n":["金属夹子","Metal clip"],"s":["M","M"],"u":["个","pc"],"p":1.3,"k":"金属夹子|M|个"},{"c":"fast","n":["金属夹子","Metal clip"],"s":["L","L"],"u":["个","pc"],"p":2,"k":"金属夹子|L|个"},{"c":"fast","n":["金属夹子","Metal clip"],"s":["XL","XL"],"u":["个","pc"],"p":2.5,"k":"金属夹子|XL|个"},{"c":"fast","n":["开体花篮","Turnbuckle (open body)"],"s":["M16","M16"],"u":["个","pc"],"p":14,"k":"开体花篮|M16|个"},{"c":"fast","n":["螺母","Nut"],"s":["M6","M6"],"u":["个","pc"],"p":0.1,"k":"螺母|M6|个"},{"c":"fast","n":["内六角螺栓","Hex socket bolt"],"s":["M20×70mm","M20×70mm"],"u":["个","pc"],"p":5.6,"k":"内六角螺栓|M20×70mm|个"},{"c":"fast","n":["内六角螺丝","Hex socket screw"],"s":["6×60mm","6×60mm"],"u":["个","pc"],"p":0.5,"k":"内六角螺丝|6×60mm|个"},{"c":"fast","n":["射钉枪一体钉","Nail gun nails (integrated)"],"s":["小号","Small"],"u":["盒","box"],"p":95,"k":"射钉枪一体钉|小号|盒"},{"c":"fast","n":["外六角螺栓","Hex head bolt"],"s":["M12×120mm","M12×120mm"],"u":["个","pc"],"p":3,"k":"外六角螺栓|M12×120mm|个"},{"c":"fast","n":["钻尾丝","Self-drilling screw"],"s":["长40×∅4.8mm","Length 40 × ∅4.8 mm"],"u":["箱","carton"],"p":380,"k":"钻尾丝|长40×∅4.8mm|箱"},{"c":"pipe","n":["不锈钢球阀","Stainless steel ball valve"],"s":null,"u":["个","pc"],"p":17,"k":"不锈钢球阀||个"},{"c":"pipe","n":["焊接弯头","Welded elbow"],"s":["φ133mm","φ133mm"],"u":["个","pc"],"p":75,"k":"焊接弯头|φ133mm|个"},{"c":"pipe","n":["焊接弯头","Welded elbow"],"s":["φ215mm","φ215mm"],"u":["个","pc"],"p":300,"k":"焊接弯头|φ215mm|个"},{"c":"pipe","n":["Pu气管","PU air hose"],"s":["10×6.5mm，100米/卷","10×6.5 mm, 100 m/roll"],"u":["卷","roll"],"p":260,"k":"Pu气管|10×6.5mm，100米/卷|卷"},{"c":"pipe","n":["PVC弯头","PVC elbow"],"s":["90度∅160mm","90°, ∅160 mm"],"u":["个","pc"],"p":25,"k":"PVC弯头|90度∅160mm|个"},{"c":"pipe","n":["pe硬管接头","PE rigid pipe fitting"],"s":["φ40mm","φ40mm"],"u":["个","pc"],"p":18,"k":"pe硬管接头|φ40mm|个"},{"c":"pipe","n":["Q235焊接弯头","Q235 welded elbow"],"s":["DN50，90º","DN50, 90º"],"u":["个","pc"],"p":10,"k":"Q235焊接弯头|DN50，90º|个"},{"c":"pipe","n":["Q235焊接弯头","Q235 welded elbow"],"s":["DN80，90º","DN80, 90º"],"u":["个","pc"],"p":32,"k":"Q235焊接弯头|DN80，90º|个"},{"c":"pipe","n":["蛇皮软管","Flexible woven hose"],"s":["∅32mm，30m/卷","∅32 mm, 30 m/roll"],"u":["卷","roll"],"p":36,"k":"蛇皮软管|∅32mm，30m/卷|卷"},{"c":"pipe","n":["蛇皮软管","Flexible woven hose"],"s":["60m/卷","60 m/roll"],"u":["米","m"],"p":3,"k":"蛇皮软管|60m/卷|米"},{"c":"pipe","n":["U型PVC管卡","U-type PVC pipe clip"],"s":["16mm","16mm"],"u":["包","pack"],"p":18,"k":"U型PVC管卡|16mm|包"},{"c":"pipe","n":["U型PVC管卡","U-type PVC pipe clip"],"s":["25mm","25mm"],"u":["包","pack"],"p":18,"k":"U型PVC管卡|25mm|包"},{"c":"pipe","n":["U型PVC管卡","U-type PVC pipe clip"],"s":["32mm","32mm"],"u":["包","pack"],"p":30,"k":"U型PVC管卡|32mm|包"},{"c":"elec","n":["按钮开关","Push-button switch"],"s":["自复位","Self-resetting"],"u":["个","pc"],"p":15,"k":"按钮开关|自复位|个"},{"c":"elec","n":["包塑金属软管","Plastic-coated flexible metal conduit"],"s":["φ16mm，15米/卷","φ16 mm, 15 m/roll"],"u":["卷","roll"],"p":38,"k":"包塑金属软管|φ16mm，15米/卷|卷"},{"c":"elec","n":["包塑金属软管","Plastic-coated flexible metal conduit"],"s":["φ20mm，15米/卷","φ20 mm, 15 m/roll"],"u":["卷","roll"],"p":45,"k":"包塑金属软管|φ20mm，15米/卷|卷"},{"c":"elec","n":["包塑金属软管","Plastic-coated flexible metal conduit"],"s":["φ25mm，15米/卷","φ25 mm, 15 m/roll"],"u":["卷","roll"],"p":65,"k":"包塑金属软管|φ25mm，15米/卷|卷"},{"c":"elec","n":["插头","Plug"],"s":["2P","2P"],"u":["个","pc"],"p":2,"k":"插头|2P|个"},{"c":"elec","n":["电缆线","Electric cable"],"s":["2.5mm²×2芯,100米/卷","2 cores × 2.5 mm², 100 m/roll"],"u":["米","m"],"p":22,"k":"电缆线|2.5mm²×2芯,100米/卷|米"},{"c":"elec","n":["电烙铁","Soldering iron"],"s":null,"u":["套","set"],"p":20,"k":"电烙铁||套"},{"c":"elec","n":["吊灯盘","Ceiling lamp base"],"s":["φ80","φ80"],"u":["个","pc"],"p":5,"k":"吊灯盘|φ80|个"},{"c":"elec","n":["倒顺开关","Forward/reverse switch"],"s":["HY2-20A","HY2-20A"],"u":["个","pc"],"p":60,"k":"倒顺开关|HY2-20A|个"},{"c":"elec","n":["地拖延长插座","Extension socket"],"s":null,"u":["个","pc"],"p":15,"k":"地拖延长插座||个"},{"c":"elec","n":["过热载继电器","Thermal overload relay"],"s":["NXR-25、12A-18A","NXR-25, 12A-18A"],"u":["个","pc"],"p":60,"k":"过热载继电器|NXR-25、12A-18A|个"},{"c":"elec","n":["交流接触器","AC contactor"],"s":["380V，18A","380V, 18A"],"u":["个","pc"],"p":70,"k":"交流接触器|380V，18A|个"},{"c":"elec","n":["交流接触器","AC contactor"],"s":["380V，40A","380V, 40A"],"u":["个","pc"],"p":165,"k":"交流接触器|380V，40A|个"},{"c":"elec","n":["锂电池投光灯","Rechargeable floodlight"],"s":["200W","200W"],"u":["台","unit"],"p":280,"k":"锂电池投光灯|200W|台"},{"c":"elec","n":["漏电保护断路器（正泰）","Residual-current circuit breaker (Chint)"],"s":["3P63A","3P63A"],"u":["个","pc"],"p":75,"k":"漏电保护断路器（正泰）|3P63A|个"},{"c":"elec","n":["配电箱","Distribution box"],"s":["400×300×180mm","400×300×180mm"],"u":["个","pc"],"p":180,"k":"配电箱|400×300×180mm|个"},{"c":"elec","n":["配电箱","Distribution box"],"s":["500×400×180mm","500×400×180mm"],"u":["个","pc"],"p":240,"k":"配电箱|500×400×180mm|个"},{"c":"elec","n":["塑料外壳式断路器","Moulded case circuit breaker"],"s":["NXM-125S/4300B","NXM-125S/4300B"],"u":["个","pc"],"p":180,"k":"塑料外壳式断路器|NXM-125S/4300B|个"},{"c":"elec","n":["智能安全插座","Smart safety socket"],"s":null,"u":["个","pc"],"p":30,"k":"智能安全插座||个"},{"c":"mach","n":["齿轮皮带","Timing belt"],"s":null,"u":["条","pc"],"p":15,"k":"齿轮皮带||条"},{"c":"mach","n":["吹风机(迈特锐)","Blower (Metrui)"],"s":["锂电池版","Lithium battery version"],"u":["台","unit"],"p":580,"k":"吹风机(迈特锐)|锂电池版|台"},{"c":"mach","n":["高压水枪","High-pressure washer"],"s":null,"u":["台","unit"],"p":4200,"k":"高压水枪||台"},{"c":"mach","n":["夯机板","Rammer base plate"],"s":null,"u":["块","pc"],"p":240,"k":"夯机板||块"},{"c":"mach","n":["角磨机碳刷","Angle grinder carbon brushes"],"s":null,"u":["副","set"],"p":5,"k":"角磨机碳刷||副"},{"c":"mach","n":["角磨机锂电池","Angle grinder lithium battery"],"s":null,"u":["个","pc"],"p":400,"k":"角磨机锂电池||个"},{"c":"mach","n":["雷胜切割机","Leisheng cut-off machine"],"s":["LS-910型，Z1G-LS-355","Model LS-910, Z1G-LS-355"],"u":["台","unit"],"p":780,"k":"雷胜切割机|LS-910型，Z1G-LS-355|台"},{"c":"mach","n":["雷胜手电钻","Leisheng electric drill"],"s":["6132、980w","6132, 980w"],"u":["台","unit"],"p":220,"k":"雷胜手电钻|6132、980w|台"},{"c":"mach","n":["雷胜吹吸一体风机","Leisheng blower-vacuum"],"s":["LS4026","LS4026"],"u":["台","unit"],"p":230,"k":"雷胜吹吸一体风机|LS4026|台"},{"c":"mach","n":["麻花钻头","Twist drill bit"],"s":["φ4.5mm","φ4.5mm"],"u":["个","pc"],"p":4,"k":"麻花钻头|φ4.5mm|个"},{"c":"mach","n":["麻花钻头","Twist drill bit"],"s":["φ4.8mm","φ4.8mm"],"u":["个","pc"],"p":4.5,"k":"麻花钻头|φ4.8mm|个"},{"c":"mach","n":["麻花钻头","Twist drill bit"],"s":["φ5.0mm","φ5.0mm"],"u":["个","pc"],"p":5.5,"k":"麻花钻头|φ5.0mm|个"},{"c":"mach","n":["麻花钻头","Twist drill bit"],"s":["φ5.2mm","φ5.2mm"],"u":["个","pc"],"p":5.5,"k":"麻花钻头|φ5.2mm|个"},{"c":"mach","n":["皮带","Drive belt"],"s":["A920Li","A920Li"],"u":["条","pc"],"p":10,"k":"皮带|A920Li|条"},{"c":"mach","n":["汽油立式夯机","Petrol vertical rammer"],"s":null,"u":["台","unit"],"p":2900,"k":"汽油立式夯机||台"},{"c":"mach","n":["汽油机油门拉线","Petrol engine throttle cable"],"s":null,"u":["条","pc"],"p":10,"k":"汽油机油门拉线||条"},{"c":"mach","n":["汽油启动机拉盘","Petrol engine recoil starter"],"s":["170","170"],"u":["个","pc"],"p":65,"k":"汽油启动机拉盘|170|个"},{"c":"mach","n":["水泥地面抹光机","Concrete floor trowel machine"],"s":null,"u":["台","unit"],"p":2400,"k":"水泥地面抹光机||台"},{"c":"mach","n":["轴承","Bearing"],"s":["6008","6008"],"u":["个","pc"],"p":30,"k":"轴承|6008|个"},{"c":"mach","n":["轴承座","Bearing housing"],"s":["FY1506 · 水泥搅拌机用","FY1506 · For cement mixers"],"u":["个","pc"],"p":30,"k":"轴承座|FY1506 · 水泥搅拌机用|个"},{"c":"mach","n":["轴承油封","Bearing oil seal"],"s":["50-72-12","50-72-12"],"u":["个","pc"],"p":22,"k":"轴承油封|50-72-12|个"},{"c":"mach","n":["轴承油封","Bearing oil seal"],"s":["65-90-12","65-90-12"],"u":["个","pc"],"p":13,"k":"轴承油封|65-90-12|个"},{"c":"hand","n":["半圆锉","Half-round file"],"s":["12-300mm","12-300mm"],"u":["把","pc"],"p":25,"k":"半圆锉|12-300mm|把"},{"c":"hand","n":["方抹子","Square trowel"],"s":["铁制","Iron"],"u":["个","pc"],"p":15,"k":"方抹子|铁制|个"},{"c":"hand","n":["钢尺","Steel tape measure"],"s":["100m","100m"],"u":["个","pc"],"p":68,"k":"钢尺|100m|个"},{"c":"hand","n":["钢丝碗刷","Wire cup brush"],"s":["内径16mm","ID 16 mm"],"u":["个","pc"],"p":2.5,"k":"钢丝碗刷|内径16mm|个"},{"c":"hand","n":["滚筒刷头","Paint roller head"],"s":["10个/包","10 pcs/pack"],"u":["个","pc"],"p":1.5,"k":"滚筒刷头|10个/包|个"},{"c":"hand","n":["滚筒刷头","Paint roller head"],"s":["长10cm，10个/包","Length 10 cm, 10 pcs/pack"],"u":["包","pack"],"p":2.5,"k":"滚筒刷头|长10cm，10个/包|包"},{"c":"hand","n":["果枝剪刀","Pruning shears"],"s":["小号","Small"],"u":["把","pc"],"p":20,"k":"果枝剪刀|小号|把"},{"c":"hand","n":["红外线测温仪","Infrared thermometer"],"s":null,"u":["个","pc"],"p":180,"k":"红外线测温仪||个"},{"c":"hand","n":["尖锹","Pointed shovel"],"s":null,"u":["把","pc"],"p":35,"k":"尖锹||把"},{"c":"hand","n":["剪刀","Scissors"],"s":null,"u":["把","pc"],"p":15,"k":"剪刀||把"},{"c":"hand","n":["胶枪","Caulking gun"],"s":["300mm","300mm"],"u":["把","pc"],"p":18,"k":"胶枪|300mm|把"},{"c":"hand","n":["角尺","Try square"],"s":["30cm","30cm"],"u":["把","pc"],"p":15,"k":"角尺|30cm|把"},{"c":"hand","n":["卷尺","Tape measure"],"s":["3m","3m"],"u":["把","pc"],"p":null,"k":"卷尺|3m|把"},{"c":"hand","n":["卷尺","Tape measure"],"s":["5m","5m"],"u":["把","pc"],"p":null,"k":"卷尺|5m|把"},{"c":"hand","n":["卷尺","Tape measure"],"s":["7.5m","7.5m"],"u":["把","pc"],"p":"12/15","k":"卷尺|7.5m|把"},{"c":"hand","n":["卷尺","Tape measure"],"s":["10m","10m"],"u":["把","pc"],"p":15,"k":"卷尺|10m|把"},{"c":"hand","n":["尖抹子","Pointed trowel"],"s":["铁制","Iron"],"u":["个","pc"],"p":12,"k":"尖抹子|铁制|个"},{"c":"hand","n":["尖嘴钳","Needle-nose pliers"],"s":null,"u":["把","pc"],"p":13,"k":"尖嘴钳||把"},{"c":"hand","n":["金属探测仪","Metal detector"],"s":["MD-3003B","MD-3003B"],"u":["个","pc"],"p":120,"k":"金属探测仪|MD-3003B|个"},{"c":"hand","n":["老虎钳","Pliers"],"s":null,"u":["把","pc"],"p":15,"k":"老虎钳||把"},{"c":"hand","n":["螺丝刀","Screwdriver"],"s":["3寸5×75mm","3 in, 5×75 mm"],"u":["把","pc"],"p":3,"k":"螺丝刀|3寸5×75mm|把"},{"c":"hand","n":["螺丝刀","Screwdriver"],"s":["4寸6×100mm","4 in, 6×100 mm"],"u":["把","pc"],"p":4,"k":"螺丝刀|4寸6×100mm|把"},{"c":"hand","n":["螺丝刀","Screwdriver"],"s":["5寸","5 in"],"u":["把","pc"],"p":4,"k":"螺丝刀|5寸|把"},{"c":"hand","n":["毛刷","Brush"],"s":["2寸","2 in"],"u":["把","pc"],"p":2,"k":"毛刷|2寸|把"},{"c":"hand","n":["毛刷","Brush"],"s":["3寸","3 in"],"u":["把","pc"],"p":2.5,"k":"毛刷|3寸|把"},{"c":"hand","n":["毛刷","Brush"],"s":["4寸","4 in"],"u":["把","pc"],"p":3,"k":"毛刷|4寸|把"},{"c":"hand","n":["美工刀","Utility knife"],"s":["长15cm","Length 15 cm"],"u":["把","pc"],"p":4,"k":"美工刀|长15cm|把"},{"c":"hand","n":["美工刀片","Utility knife blades"],"s":["长12cm","Length 12 cm"],"u":["盒","box"],"p":3.5,"k":"美工刀片|长12cm|盒"},{"c":"hand","n":["内六角扳手","Hex key (Allen key)"],"s":["12mm/14mm","12mm/14mm"],"u":["把","pc"],"p":"12/15","k":"内六角扳手|12mm/14mm|把"},{"c":"hand","n":["平锹","Flat shovel"],"s":["1m","1m"],"u":["把","pc"],"p":35,"k":"平锹|1m|把"},{"c":"hand","n":["平锹","Flat shovel"],"s":null,"u":["把","pc"],"p":35,"k":"平锹||把"},{"c":"hand","n":["石笔","Marking chalk"],"s":["10小盒/大盒","10 small boxes per large box"],"u":["小盒","small box"],"p":8,"k":"石笔|10小盒/大盒|小盒"},{"c":"hand","n":["石笔","Marking chalk"],"s":["小号","Small"],"u":["盒","box"],"p":40,"k":"石笔|小号|盒"},{"c":"hand","n":["水平尺","Spirit level"],"s":["长30cm","Length 30 cm"],"u":["把","pc"],"p":25,"k":"水平尺|长30cm|把"},{"c":"hand","n":["手动油抽","Manual oil pump"],"s":null,"u":["个","pc"],"p":125,"k":"手动油抽||个"},{"c":"hand","n":["数显卡尺","Digital caliper"],"s":["长150mm","Length 150 mm"],"u":["把","pc"],"p":85,"k":"数显卡尺|长150mm|把"},{"c":"hand","n":["铁锹木柄","Shovel wooden handle"],"s":null,"u":["根","pc"],"p":20,"k":"铁锹木柄||根"},{"c":"hand","n":["油灰刀","Putty knife"],"s":["铁制","Iron"],"u":["个","pc"],"p":5,"k":"油灰刀|铁制|个"},{"c":"hand","n":["扎勾","Tie hook"],"s":null,"u":["个","pc"],"p":7,"k":"扎勾||个"},{"c":"weld","n":["电焊条","Welding electrode"],"s":["J422φ3.2mm","J422φ3.2mm"],"u":["箱","carton"],"p":180,"k":"电焊条|J422φ3.2mm|箱"},{"c":"weld","n":["等离子切割机","Plasma cutter"],"s":["LGK-80SDY","LGK-80SDY"],"u":["台","unit"],"p":4200,"k":"等离子切割机|LGK-80SDY|台"},{"c":"weld","n":["等离子切割机","Plasma cutter"],"s":["120A","120A"],"u":["台","unit"],"p":6200,"k":"等离子切割机|120A|台"},{"c":"weld","n":["等离子切割嘴","Plasma cutting nozzle"],"s":["P80A","P80A"],"u":["套","set"],"p":8,"k":"等离子切割嘴|P80A|套"},{"c":"weld","n":["焊机接头（公）","Welding machine connector (male)"],"s":["DKJ35-50","DKJ35-50"],"u":["个","pc"],"p":7,"k":"焊机接头（公）|DKJ35-50|个"},{"c":"weld","n":["焊工面罩透明玻璃","Welding mask clear lens"],"s":["长108×宽50mm","L108 × W50 mm"],"u":["片","pc"],"p":1.5,"k":"焊工面罩透明玻璃|长108×宽50mm|片"},{"c":"weld","n":["木工锯片","Wood saw blade"],"s":["100mm/4寸","100 mm / 4 in"],"u":["片","pc"],"p":21,"k":"木工锯片|100mm/4寸|片"},{"c":"weld","n":["木工切割片/木工锯片","Wood cutting / saw blade"],"s":["12寸","12 in"],"u":["片","pc"],"p":120,"k":"木工切割片/木工锯片|12寸|片"},{"c":"weld","n":["喷火枪","Gas torch"],"s":["YD-50","YD-50"],"u":["把","pc"],"p":95,"k":"喷火枪|YD-50|把"},{"c":"weld","n":["切割片","Cutting disc"],"s":["125×1.2×22mm","125×1.2×22mm"],"u":["片","pc"],"p":2,"k":"切割片|125×1.2×22mm|片"},{"c":"weld","n":["切割片","Cutting disc"],"s":["355","355"],"u":["片","pc"],"p":12,"k":"切割片|355|片"},{"c":"weld","n":["氧气/乙炔切割嘴","Oxygen / acetylene cutting nozzle"],"s":["G01-30","G01-30"],"u":["套","set"],"p":null,"k":"氧气/乙炔切割嘴|G01-30|套"},{"c":"weld","n":["氧气减压器（氧气表）","Oxygen regulator"],"s":["本地","Local"],"u":["个","pc"],"p":75,"k":"氧气减压器（氧气表）|本地|个"},{"c":"lift","n":["吊装带","Lifting sling"],"s":["3吨2米","3 t, 2 m"],"u":["条","pc"],"p":42,"k":"吊装带|3吨2米|条"},{"c":"lift","n":["镀锌吊轮","Galvanised hanging wheel"],"s":null,"u":["个","pc"],"p":25,"k":"镀锌吊轮||个"},{"c":"lift","n":["独轮车轮子","Wheelbarrow wheel"],"s":["4.80/4.00-8","4.80/4.00-8"],"u":["个","pc"],"p":75,"k":"独轮车轮子|4.80/4.00-8|个"},{"c":"lift","n":["镀锌钢丝绳","Galvanised wire rope"],"s":["M4","M4"],"u":["米","m"],"p":1.5,"k":"镀锌钢丝绳|M4|米"},{"c":"lift","n":["镀锌钢丝绳","Galvanised wire rope"],"s":["φ11mm","φ11mm"],"u":["米","m"],"p":11,"k":"镀锌钢丝绳|φ11mm|米"},{"c":"lift","n":["镀锌导轨/滑轨","Galvanised guide rail / track"],"s":["6m/根","6 m each"],"u":["根","pc"],"p":260,"k":"镀锌导轨/滑轨|6m/根|根"},{"c":"lift","n":["镀锌双地滑轮","Galvanised double floor pulley"],"s":null,"u":["个","pc"],"p":30,"k":"镀锌双地滑轮||个"},{"c":"lift","n":["翻斗车轮胎","Dump cart tyre"],"s":["外径66cm","OD 66 cm"],"u":["个","pc"],"p":120,"k":"翻斗车轮胎|外径66cm|个"},{"c":"lift","n":["4mm钢丝绳","4 mm wire rope"],"s":["φ4（直径4mm）","φ4 (4 mm diameter)"],"u":["米","m"],"p":1.5,"k":"4mm钢丝绳|φ4（直径4mm）|米"},{"c":"lift","n":["横吊板夹起重钳","Horizontal plate lifting clamp"],"s":["DFM2吨","DFM 2 t"],"u":["个","pc"],"p":290,"k":"横吊板夹起重钳|DFM2吨|个"},{"c":"lift","n":["螺旋千斤顶","Screw jack"],"s":["QL32","QL32"],"u":["个","pc"],"p":380,"k":"螺旋千斤顶|QL32|个"},{"c":"lift","n":["尼龙夹轮","Nylon clamp wheel"],"s":["∅40×70mm","∅40×70mm"],"u":["个","pc"],"p":9,"k":"尼龙夹轮|∅40×70mm|个"},{"c":"lift","n":["起重滑轮吊钩","Lifting pulley with hook"],"s":["2吨","2 t"],"u":["个","pc"],"p":78,"k":"起重滑轮吊钩|2吨|个"},{"c":"lift","n":["伸缩梯","Telescopic ladder"],"s":["5.4米","5.4 m"],"u":["个","pc"],"p":900,"k":"伸缩梯|5.4米|个"},{"c":"lift","n":["伸缩梯","Telescopic ladder"],"s":["6.2米","6.2 m"],"u":["个","pc"],"p":1050,"k":"伸缩梯|6.2米|个"},{"c":"lift","n":["铁链","Iron chain"],"s":["22×11×φ2.5mm","22×11×φ2.5mm"],"u":["袋","bag"],"p":115,"k":"铁链|22×11×φ2.5mm|袋"},{"c":"lift","n":["铁链/吊灯链","Iron chain / lamp chain"],"s":null,"u":["卷","roll"],"p":220,"k":"铁链/吊灯链||卷"},{"c":"lift","n":["斜轮/地滑轮","Angled wheel / floor pulley"],"s":["∅115mm","∅115mm"],"u":["个","pc"],"p":75,"k":"斜轮/地滑轮|∅115mm|个"},{"c":"lift","n":["小推车/翻斗车","Wheelbarrow / dump cart"],"s":["独轮（蓝色）","Single wheel (blue)"],"u":["台","unit"],"p":280,"k":"小推车/翻斗车|独轮（蓝色）|台"},{"c":"safe","n":["安全带","Safety harness"],"s":["五点式双钩","5-point, double hook"],"u":["条","pc"],"p":90,"k":"安全带|五点式双钩|条"},{"c":"safe","n":["安全帽","Hard hat"],"s":["红黄蓝白","Red / yellow / blue / white"],"u":["个","pc"],"p":14,"k":"安全帽|红黄蓝白|个"},{"c":"safe","n":["草帽","Straw hat"],"s":null,"u":["个","pc"],"p":12,"k":"草帽||个"},{"c":"safe","n":["电工绝缘鞋/胶鞋","Insulated electrician shoes / rubber shoes"],"s":["255~270","255~270"],"u":["双","pair"],"p":35,"k":"电工绝缘鞋/胶鞋|255~270|双"},{"c":"safe","n":["浸胶手套","Rubber-dipped gloves"],"s":["12双/包","12 pairs/pack"],"u":["双","pair"],"p":3.5,"k":"浸胶手套|12双/包|双"},{"c":"safe","n":["口罩","Face mask"],"s":["10个/包","10 pcs/pack"],"u":["个","pc"],"p":0.25,"k":"口罩|10个/包|个"},{"c":"safe","n":["牛盾丁腈手套","Niudun nitrile gloves"],"s":["12双/包","12 pairs/pack"],"u":["双","pair"],"p":3.5,"k":"牛盾丁腈手套|12双/包|双"},{"c":"safe","n":["牛顿发泡手套","Newton foam-coated gloves"],"s":["12双/包","12 pairs/pack"],"u":["双","pair"],"p":3.5,"k":"牛顿发泡手套|12双/包|双"},{"c":"mat","n":["玻璃纤维布","Fibreglass cloth"],"s":["27×0.1m","27×0.1m"],"u":["卷","roll"],"p":20,"k":"玻璃纤维布|27×0.1m|卷"},{"c":"mat","n":["玻璃胶/结构胶","Glass / structural sealant"],"s":["793","793"],"u":["管","tube"],"p":22,"k":"玻璃胶/结构胶|793|管"},{"c":"mat","n":["除锈润滑剂（松动剂）","Rust remover lubricant (penetrating oil)"],"s":["WLB-40、450ml/瓶","WLB-40, 450 ml/bottle"],"u":["瓶","bottle"],"p":18,"k":"除锈润滑剂（松动剂）|WLB-40、450ml/瓶|瓶"},{"c":"mat","n":["灌浆料","Grouting material"],"s":["25kg/袋","25 kg/bag"],"u":["袋","bag"],"p":260,"k":"灌浆料|25kg/袋|袋"},{"c":"mat","n":["工程膜/聚乙烯薄膜","Construction film / polyethylene sheeting"],"s":["1m×50m","1m×50m"],"u":["卷","roll"],"p":60,"k":"工程膜/聚乙烯薄膜|1m×50m|卷"},{"c":"mat","n":["聚乙烯薄膜","Polyethylene film"],"s":["1m","1m"],"u":["卷","roll"],"p":60,"k":"聚乙烯薄膜|1m|卷"},{"c":"mat","n":["青稞纸","Insulation paper"],"s":["0.5mm","0.5mm"],"u":["张","sheet"],"p":null,"k":"青稞纸|0.5mm|张"},{"c":"mat","n":["青稞纸","Insulation paper"],"s":["1mm","1mm"],"u":["张","sheet"],"p":20,"k":"青稞纸|1mm|张"},{"c":"mat","n":["石棉板（橡胶）","Asbestos rubber sheet"],"s":["1.5m×4m","1.5m×4m"],"u":["卷","roll"],"p":700,"k":"石棉板（橡胶）|1.5m×4m|卷"},{"c":"mat","n":["铁丝","Iron wire"],"s":["14号","No. 14"],"u":["公斤","kg"],"p":15,"k":"铁丝|14号|公斤"},{"c":"mat","n":["熊猫995结构胶","Panda 995 structural sealant"],"s":null,"u":["支","tube"],"p":16,"k":"熊猫995结构胶||支"},{"c":"mat","n":["植筋胶","Rebar anchoring adhesive"],"s":["4kg","4kg"],"u":["桶","pail"],"p":85,"k":"植筋胶|4kg|桶"},{"c":"mat","n":["植筋胶","Rebar anchoring adhesive"],"s":["4L/桶,包装规格32×32×19.4cm","4 L/pail, pack size 32×32×19.4 cm"],"u":["桶","pail"],"p":95,"k":"植筋胶|4L/桶,包装规格32×32×19.4cm|桶"},{"c":"mat","n":["铸工胶","Metal repair adhesive"],"s":null,"u":["盒","box"],"p":18,"k":"铸工胶||盒"},{"c":"misc","n":["不锈钢盆","Stainless steel basin"],"s":["直径22cm","Diameter 22 cm"],"u":["个","pc"],"p":13,"k":"不锈钢盆|直径22cm|个"},{"c":"misc","n":["便签纸/便利贴","Sticky notes"],"s":["76×76×10mm","76×76×10mm"],"u":["本","pad"],"p":3,"k":"便签纸/便利贴|76×76×10mm|本"},{"c":"misc","n":["吨包","Bulk bag"],"s":null,"u":["个","pc"],"p":30,"k":"吨包||个"},{"c":"misc","n":["工具包","Tool bag"],"s":["绿色","Green"],"u":["个","pc"],"p":18,"k":"工具包|绿色|个"},{"c":"misc","n":["灰桶","Plaster bucket"],"s":["白色20L","White, 20 L"],"u":["个","pc"],"p":25,"k":"灰桶|白色20L|个"},{"c":"misc","n":["喷壶","Spray bottle"],"s":["2L","2L"],"u":["个","pc"],"p":35,"k":"喷壶|2L|个"},{"c":"misc","n":["铜锁","Brass padlock"],"s":["38mm","38mm"],"u":["把","pc"],"p":5,"k":"铜锁|38mm|把"},{"c":"misc","n":["文件袋","Document folder"],"s":["A4","A4"],"u":["个","pc"],"p":2,"k":"文件袋|A4|个"},{"c":"misc","n":["钥匙串","Key ring"],"s":["11位","11 keys"],"u":["把","pc"],"p":6,"k":"钥匙串|11位|把"},{"c":"misc","n":["钥匙串","Key ring"],"s":["18位","18 keys"],"u":["把","pc"],"p":15,"k":"钥匙串|18位|把"},{"c":"misc","n":["钥匙串","Key ring"],"s":["28位","28 keys"],"u":["把","pc"],"p":18,"k":"钥匙串|28位|把"},{"c":"misc","n":["钥匙串","Key ring"],"s":["30位","30 keys"],"u":["把","pc"],"p":42,"k":"钥匙串|30位|把"},{"c":"misc","n":["钥匙串吊牌","Key tag"],"s":null,"u":["个","pc"],"p":0.4,"k":"钥匙串吊牌||个"},{"c":"misc","n":["竹扫把","Bamboo broom"],"s":["大号","Large"],"u":["把","pc"],"p":48,"k":"竹扫把|大号|把"}];
+const CATS=[{"k":"fast","n":["紧固件与配件","Fasteners & Fittings"]},{"k":"pipe","n":["管材与管件","Pipes & Fittings"]},{"k":"elec","n":["电气","Electrical"]},{"k":"mach","n":["电动工具与机械","Power Tools & Machinery"]},{"k":"hand","n":["手动工具与测量","Hand Tools & Measuring"]},{"k":"weld","n":["焊接与切割","Welding & Cutting"]},{"k":"lift","n":["起重与搬运","Lifting & Hauling"]},{"k":"safe","n":["劳保用品","Safety & Workwear"]},{"k":"mat","n":["胶粘与材料","Adhesives & Materials"]},{"k":"misc","n":["日用杂项","General Supplies"]}];
+const T={
+zh:{brand:"临沂五金建材",nav_products:"商品",nav_services:"服务",nav_book:"预约",nav_contact:"联系",
+h1:"尼日利亚临沂五金建材",
+phone:"电话",wechat:"微信号",copy:"复制",copied:"已复制",copy_fail:"请手动复制",
+cta_products:"查看商品价格",cta_book:"预约",
+h_products:"商品价格",price_note:"价格单位:人民币(¥)。",search:"搜索名称、型号或尺寸",all:"全部",
+count_all:"共 {n} 件",count_some:"显示 {m} / {n} 件",ask:"询价",
+empty:"没有找到「{q}」。换个词试试,或清除筛选。",clear:"清除筛选",hd_name:"名称",hd_spec:"规格型号",hd_price:"单价",
+view_photos:"查看图片",
+h_services:"服务",
+s1_t:"到店选购",s1_d:"品种齐全,到店可以当面挑选。不确定有没有货,先打电话问。",
+s2_t:"电话、微信报价",s2_d:"把型号、尺寸和数量发给我们,我们回复报价。",
+s3_t:"预约",s3_d:"选好日期和需求,把预约信息发给我们,方便提前准备。",
+h_book:"预约",book_note:"填写下面的信息,生成预约信息后复制,再通过短信或微信发给我们。留下公司名称和微信号,取货后我们也能联系到你。",
+f_name:"姓名",f_company:"公司名称(选填)",f_phone:"电话",f_wechat:"你的微信号(选填)",f_service:"服务",f_date:"期望日期",f_notes:"备注(商品、数量、其他需求)",
+o0:"到店选购",o1:"咨询报价",o2:"其他",make:"生成预约信息",res_label:"预约信息",copy_msg:"复制预约信息",sms:"用短信发送",
+send_note:"本页面不会发送任何内容。请复制后通过短信或微信发给我们。",err:"请填写姓名和电话,方便我们联系你。",
+h_contact:"联系我们",qr_cap:"微信扫一扫,添加好友",wc_add:"在微信中添加",foot:"© 临沂五金建材",
+ed_on:"编辑图片",ed_off:"退出编辑",ed_add:"+ 图片",ed_save:"保存并发布",ed_disc:"放弃修改",ed_pending:"有修改,尚未发布",
+ed_size:"图片共 {mb} MB(建议不超过 6 MB,图片越多,客户打开越慢)",
+ed_hint:"点每行的“+ 图片”上传,每件商品最多 6 张,第一张是封面。点“保存并发布”后,客户才能看到。",
+ed_max:"每件商品最多 6 张图片。",ed_err_img:"有图片无法读取,已跳过。",ed_done:"已发布,页面即将刷新。",
+ed_err_large:"图片太多,超过页面上限。请删除一些图片后再发布。",ed_err_rate:"操作太频繁,请稍后再试。",
+ed_err_ro:"你没有编辑权限。",ed_conflict:"页面刚刚有新版本,正在刷新。",ed_err:"发布失败。图片还保留在页面里,请稍后再试。",
+ed_busy:"正在处理图片…",ed_saving:"正在发布…",lb_cover:"设为封面",lb_del:"删除这张",lb_close:"关闭",lb_prev:"上一张",lb_next:"下一张",
+f_company_l:"公司",f_wechat_l:"微信"},
+en:{brand:"Linyi Hardware",nav_products:"Products",nav_services:"Services",nav_book:"Book",nav_contact:"Contact",
+h1:"Linyi Hardware & Building Materials, Nigeria",
+phone:"Phone",wechat:"WeChat ID",copy:"Copy",copied:"Copied",copy_fail:"Copy manually",
+cta_products:"See prices",cta_book:"Book",
+h_products:"Products and prices",price_note:"Prices are in RMB (¥).",search:"Search by name, model or size",all:"All",
+count_all:"{n} items",count_some:"Showing {m} of {n} items",ask:"Ask for price",
+empty:"No items match “{q}”. Try another word or clear the filter.",clear:"Clear filter",hd_name:"Item",hd_spec:"Model / size",hd_price:"Price",
+view_photos:"View photos",
+h_services:"Services",
+s1_t:"Shop in store",s1_d:"A full range, picked in person. Not sure an item is in stock? Call first.",
+s2_t:"Quotes by phone or WeChat",s2_d:"Send us the model, size and quantity and we reply with a quote.",
+s3_t:"Book a visit or call",s3_d:"Choose a date and what you need, then send us the booking message so we can prepare.",
+h_book:"Book",book_note:"Fill in the form, create the booking message, copy it, and send it to us by SMS or WeChat. Leave your company name and WeChat ID so we can reach you after you collect your goods.",
+f_name:"Name",f_company:"Company name (optional)",f_phone:"Phone",f_wechat:"Your WeChat ID (optional)",f_service:"Service",f_date:"Preferred date",f_notes:"Notes (items, quantity, anything else)",
+o0:"Shop in store",o1:"Price enquiry",o2:"Other",make:"Create booking message",res_label:"Booking message",copy_msg:"Copy message",sms:"Open in SMS app",
+send_note:"This page does not send anything. Copy the message and send it to us by SMS or WeChat.",err:"Enter your name and phone number so we can reach you.",
+h_contact:"Contact us",qr_cap:"Scan with WeChat to add us",wc_add:"Add on WeChat",foot:"© Linyi Hardware & Building Materials",
+ed_on:"Edit photos",ed_off:"Stop editing",ed_add:"+ Photo",ed_save:"Save and publish",ed_disc:"Discard changes",ed_pending:"Unpublished changes",
+ed_size:"Photos total {mb} MB (keep under 6 MB; more photos make the page slower to open)",
+ed_hint:"Tap “+ Photo” on a row to upload. Up to 6 photos per item; the first is the cover. Customers see changes only after you tap “Save and publish”.",
+ed_max:"Each item can have up to 6 photos.",ed_err_img:"Some photos could not be read and were skipped.",ed_done:"Published. The page will refresh.",
+ed_err_large:"Too many photos for one page. Delete some and publish again.",ed_err_rate:"Too many requests. Try again in a moment.",
+ed_err_ro:"You do not have permission to edit.",ed_conflict:"A newer version was just published. Refreshing.",ed_err:"Publishing failed. Your photos are still on the page, so try again in a moment.",
+ed_busy:"Processing photos…",ed_saving:"Publishing…",lb_cover:"Make cover",lb_del:"Delete this photo",lb_close:"Close",lb_prev:"Previous",lb_next:"Next",
+f_company_l:"Company",f_wechat_l:"WeChat"}
+};
+const TP="/*DATA_"+"PHOTOS*/",TS="/*DATA_"+"SELF*/";
+const SKEL='<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>\n';
+const MAXN=6,MAXPX=640,SOFT=6e6,HARD=11e6;
+const $=id=>document.getElementById(id);
+const BYK={};ITEMS.forEach(i=>{BYK[i.k]=i});
+let PH={};try{PH=JSON.parse($("photos").textContent||"{}")||{}}catch(e){PH={}}
+let lang="zh",cat="all",edit=false,canEdit=false,dirty=false,pendingKey=null,lb={k:null,i:0},lastFocus=null,busy=false;
+try{const s=localStorage.getItem("lang");if(s==="zh"||s==="en")lang=s;else if(!/^zh/i.test(navigator.language||""))lang="en"}catch(e){if(!/^zh/i.test(navigator.language||""))lang="en"}
+const L=()=>lang==="zh"?0:1;
+const t=k=>T[lang][k];
+function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+const fmt=n=>String(Number(n));
+function priceText(p){return typeof p==="number"?"¥"+fmt(p):String(p).split("/").map(x=>"¥"+x.trim()).join(" / ")}
+function hasPhotos(){return Object.values(PH).some(a=>a&&a.length)}
+function photoBytes(){let n=0;for(const k in PH)(PH[k]||[]).forEach(s=>{n+=s.length});return n}
+function msg(s){$("edmsg").textContent=s||""}
+
+function matches(it,q){
+  if(!q)return true;
+  const hay=(it.n[0]+" "+it.n[1]+" "+(it.s?it.s[0]+" "+it.s[1]:"")).toLowerCase();
+  return hay.includes(q);
+}
+function mediaCell(it){
+  const m=el("div","md"),ph=PH[it.k]||[];
+  if(ph.length){
+    const b=el("button","stack");b.type="button";
+    b.setAttribute("aria-label",t("view_photos")+": "+it.n[L()]+" ("+ph.length+")");
+    ph.slice(0,3).forEach(src=>{const im=new Image();im.src=src;im.alt="";im.loading="lazy";im.decoding="async";b.append(im)});
+    if(ph.length>1)b.append(el("span","cnt",String(ph.length)));
+    b.onclick=()=>openLb(it.k,0);
+    m.append(b);
+  }
+  if(edit){
+    const a=el("button","addp "+(ph.length?"small":"big"),ph.length?"+":t("ed_add"));a.type="button";
+    a.setAttribute("aria-label",t("ed_add")+": "+it.n[L()]);
+    a.onclick=()=>{if(ph.length>=MAXN){msg(t("ed_max"));return}pendingKey=it.k;$("fi").click()};
+    m.append(a);
+  }
+  return m;
+}
+function render(){
+  const q=$("q").value.trim().toLowerCase();
+  const found=ITEMS.filter(it=>matches(it,q));
+  const counts={};found.forEach(it=>counts[it.c]=(counts[it.c]||0)+1);
+  const chips=$("chips");chips.replaceChildren();
+  const mk=(key,label,n)=>{const b=el("button","chip");b.type="button";b.setAttribute("aria-pressed",String(cat===key));b.append(label);b.append(el("span","n",String(n)));b.onclick=()=>{cat=key;render()};chips.append(b)};
+  mk("all",t("all"),found.length);
+  CATS.forEach(c=>{if(counts[c.k])mk(c.k,c.n[L()],counts[c.k])});
+  if(cat!=="all"&&!counts[cat])cat="all";
+  const shown=cat==="all"?found:found.filter(it=>it.c===cat);
+  $("count").textContent=shown.length===ITEMS.length?t("count_all").replace("{n}",ITEMS.length):t("count_some").replace("{m}",shown.length).replace("{n}",ITEMS.length);
+  const out=$("out");out.replaceChildren();
+  const md=edit||hasPhotos();out.className=md?"hasmd":"";
+  if(!shown.length){
+    const d=el("div","empty",t("empty").replace("{q}",$("q").value.trim()));
+    const b=el("button","btn ghost sm",t("clear"));b.type="button";b.onclick=()=>{$("q").value="";cat="all";render()};d.append(b);out.append(d);return;
+  }
+  CATS.forEach(c=>{
+    const rows=shown.filter(it=>it.c===c.k);if(!rows.length)return;
+    const g=el("div","grp");
+    const h=el("h3",null,c.n[L()]);h.append(el("span",null,String(rows.length)));g.append(h);
+    const list=el("div","list");
+    const hd=el("div","hd");hd.setAttribute("aria-hidden","true");
+    if(md)hd.append(el("span"));
+    hd.append(el("span",null,t("hd_name")),el("span",null,t("hd_spec")),el("span","pr",t("hd_price")));list.append(hd);
+    rows.forEach(it=>{
+      const r=el("div","row");
+      if(md)r.append(mediaCell(it));
+      r.append(el("div","nm",it.n[L()]));
+      r.append(el("div","sp",it.s?it.s[L()]:""));
+      const pr=el("div","pr");
+      if(it.p===null){pr.append(el("span","price ask",t("ask")))}
+      else{const p=el("span","price",priceText(it.p));if(it.u)p.append(el("small",null,"/ "+it.u[L()]));pr.append(p)}
+      r.append(pr);list.append(r);
+    });
+    g.append(list);out.append(g);
+  });
+}
+function updateEdit(){
+  $("editbar").hidden=!canEdit;
+  $("edtog").textContent=t(edit?"ed_off":"ed_on");
+  $("edsave").hidden=!(canEdit&&edit&&dirty);$("eddisc").hidden=!(canEdit&&edit&&dirty);
+  $("edhint").hidden=!(canEdit&&edit);
+  $("edinfo").textContent=canEdit&&edit?t("ed_size").replace("{mb}",(photoBytes()/1e6).toFixed(1))+(dirty?" · "+t("ed_pending"):""):"";
+}
+function applyLang(){
+  document.documentElement.lang=lang==="zh"?"zh-CN":"en";
+  document.querySelectorAll("[data-i]").forEach(n=>{n.textContent=t(n.dataset.i)});
+  document.querySelectorAll("[data-ip]").forEach(n=>{n.placeholder=t(n.dataset.ip)});
+  $("l-zh").setAttribute("aria-pressed",String(lang==="zh"));
+  $("l-en").setAttribute("aria-pressed",String(lang==="en"));
+  $("q").setAttribute("aria-label",t("search"));
+  $("lbx").setAttribute("aria-label",t("lb_close"));$("lbp").setAttribute("aria-label",t("lb_prev"));$("lbn").setAttribute("aria-label",t("lb_next"));
+  updateEdit();render();if(!$("lb").hidden)showLb();
+}
+function setLang(l){lang=l;try{localStorage.setItem("lang",l)}catch(e){}applyLang()}
+$("l-zh").onclick=()=>setLang("zh");
+$("l-en").onclick=()=>setLang("en");
+$("q").addEventListener("input",render);
+
+/* photo viewer */
+function openLb(k,i){lb.k=k;lb.i=i;lastFocus=document.activeElement;$("lb").hidden=false;document.body.style.overflow="hidden";showLb();$("lbx").focus()}
+function closeLb(){$("lb").hidden=true;document.body.style.overflow="";if(lastFocus&&lastFocus.focus&&document.contains(lastFocus))lastFocus.focus()}
+function showLb(){
+  const a=PH[lb.k]||[];if(!a.length){closeLb();return}
+  lb.i=(lb.i+a.length)%a.length;
+  $("lbi").src=a[lb.i];
+  const it=BYK[lb.k];
+  $("lbi").alt=it?it.n[L()]:"";
+  $("lbc").textContent=(it?it.n[L()]+"  ":"")+(lb.i+1)+" / "+a.length;
+  $("lbp").hidden=$("lbn").hidden=a.length<2;
+  $("lbe").hidden=!(canEdit&&edit);
+  $("lbcover").hidden=lb.i===0;
+}
+$("lbx").onclick=closeLb;
+$("lbp").onclick=()=>{lb.i--;showLb()};
+$("lbn").onclick=()=>{lb.i++;showLb()};
+$("lb").addEventListener("click",e=>{if(e.target===$("lb"))closeLb()});
+document.addEventListener("keydown",e=>{
+  if($("lb").hidden)return;
+  if(e.key==="Escape")closeLb();
+  else if(e.key==="ArrowLeft"){lb.i--;showLb()}
+  else if(e.key==="ArrowRight"){lb.i++;showLb()}
+});
+let tx=null;
+$("lb").addEventListener("touchstart",e=>{tx=e.touches[0].clientX},{passive:true});
+$("lb").addEventListener("touchend",e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(dx)>50){lb.i+=dx<0?1:-1;showLb()}});
+$("lbcover").onclick=()=>{const a=PH[lb.k];if(!a)return;const[x]=a.splice(lb.i,1);a.unshift(x);lb.i=0;dirty=true;showLb();render();updateEdit()};
+$("lbdel").onclick=()=>{const a=PH[lb.k];if(!a)return;a.splice(lb.i,1);if(!a.length)delete PH[lb.k];dirty=true;showLb();render();updateEdit()};
+
+/* photo upload (owner only) */
+async function toJpeg(file){
+  let bmp;
+  try{bmp=await createImageBitmap(file,{imageOrientation:"from-image"})}
+  catch(e){bmp=await new Promise((res,rej)=>{const u=URL.createObjectURL(file),im=new Image();im.onload=()=>{URL.revokeObjectURL(u);res(im)};im.onerror=()=>{URL.revokeObjectURL(u);rej(new Error("img"))};im.src=u})}
+  const w0=bmp.width||bmp.naturalWidth,h0=bmp.height||bmp.naturalHeight;
+  if(!w0||!h0)throw new Error("size");
+  const s=Math.min(1,MAXPX/Math.max(w0,h0));
+  const c=document.createElement("canvas");c.width=Math.max(1,Math.round(w0*s));c.height=Math.max(1,Math.round(h0*s));
+  const x=c.getContext("2d");x.fillStyle="#fff";x.fillRect(0,0,c.width,c.height);x.drawImage(bmp,0,0,c.width,c.height);
+  if(bmp.close)bmp.close();
+  return c.toDataURL("image/jpeg",0.6);
+}
+$("fi").addEventListener("change",async e=>{
+  const files=[...e.target.files];e.target.value="";
+  if(!pendingKey||!files.length)return;
+  const k=pendingKey;pendingKey=null;msg(t("ed_busy"));
+  const arr=PH[k]||(PH[k]=[]);let skipped=0,bad=0;
+  for(const f of files){
+    if(arr.length>=MAXN){skipped++;continue}
+    try{arr.push(await toJpeg(f))}catch(_){bad++}
+  }
+  if(!arr.length)delete PH[k];
+  dirty=true;render();updateEdit();
+  msg(bad?t("ed_err_img"):skipped?t("ed_max"):"");
+});
+$("edtog").onclick=()=>{edit=!edit;msg("");updateEdit();render()};
+$("eddisc").onclick=()=>{try{PH=JSON.parse($("photos").textContent||"{}")||{}}catch(e){PH={}}dirty=false;msg("");updateEdit();render()};
+function esc(s){return s.replace(/</g,"\\u003c")}
+function buildDoc(){
+  const src=JSON.parse($("selfsrc").textContent);
+  const body=src.replace(TP,()=>esc(JSON.stringify(PH))).replace(TS,()=>esc(JSON.stringify(src)));
+  return SKEL+body+"</body></html>";
+}
+$("edsave").onclick=async()=>{
+  if(busy)return;busy=true;$("edsave").disabled=true;msg(t("ed_saving"));
+  try{
+    if(photoBytes()>HARD)throw{code:"too_large"};
+    const art=window.claude&&window.claude.use?await window.claude.use("artifact"):null;
+    if(!art)throw{code:"not_granted"};
+    const html=buildDoc();
+    if(html.length>15e6)throw{code:"too_large"};
+    await art.publish(html);
+    msg(t("ed_done"));
+  }catch(e){
+    const c=e&&e.code;
+    if(c==="not_writer"||c==="not_granted"||c==="capability_disabled"||c==="not_declared"){canEdit=false;edit=false;updateEdit();render();msg(t("ed_err_ro"))}
+    else msg(c==="too_large"?t("ed_err_large"):c==="rate_limited"?t("ed_err_rate"):c==="conflict"?t("ed_conflict"):t("ed_err"));
+  }
+  busy=false;$("edsave").disabled=false;
+};
+
+/* copy buttons */
+async function copyText(text,btn,after){
+  const reset=()=>{btn.textContent=btn.dataset.i?t(btn.dataset.i):btn.textContent};
+  const ok=()=>{if(after)after(true);btn.textContent=t("copied");setTimeout(reset,1600)};
+  try{await navigator.clipboard.writeText(text);ok();return}catch(e){}
+  try{const ta=document.createElement("textarea");ta.value=text;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";document.body.append(ta);ta.select();const done=document.execCommand("copy");ta.remove();if(done){ok();return}}catch(e){}
+  if(after)after(false);
+  btn.textContent=t("copy_fail");setTimeout(reset,2200);
+}
+document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>copyText(b.dataset.copy,b)));
+
+/* booking */
+try{$("bd").min=new Date().toLocaleDateString("en-CA")}catch(e){}
+$("go").onclick=()=>{
+  const n=$("bn").value.trim(),p=$("bp").value.trim(),c=$("bc").value.trim(),w=$("bw").value.trim();
+  if(!n||!p){$("er").textContent=t("err");return}
+  $("er").textContent="";
+  const si=Number($("bs").value);
+  const svc=T.zh["o"+si]+" / "+T.en["o"+si];
+  const m=["【预约 Booking】临沂五金建材 Linyi Hardware","姓名 Name: "+n,"公司 Company: "+(c||"-"),"电话 Phone: "+p,"微信 WeChat: "+(w||"-"),"服务 Service: "+svc,"日期 Date: "+($("bd").value||"不限 Any"),"备注 Notes: "+($("bt").value.trim()||"-")].join("\n");
+  $("rt").value=m;$("res").style.display="grid";$("cs").textContent="";
+  $("sms").href="sms:08163394568?body="+encodeURIComponent(m);
+  $("rt").scrollIntoView({block:"center"});
+};
+$("cp").onclick=()=>copyText($("rt").value,$("cp"),ok=>{if(!ok)$("rt").select()});
+
+applyLang();
+(async()=>{
+  try{
+    const u=window.claude&&window.claude.use?await window.claude.use("user"):null;
+    if(u&&(await u.canEdit()))canEdit=true;
+  }catch(e){}
+  updateEdit();render();
+})();
+</script>
+
+</body></html>
