@@ -1,1 +1,1 @@
-window.SB={url:"",key:""};
+window.SB={url:"https://tredaziglylnsbirpjlc.supabase.co",key:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRyZWRhemlnbHlsbnNiaXJwamxjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE4MzIxOTYsImV4cCI6MjEwNzQwODE5Nn0.Fkr52bZ34buTss2MIfnxa8p2iCtGolyNhLct1Ocjc-o"};
