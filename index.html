@@ -73,7 +73,7 @@
 
   <section id="book" class="sec w">
     <h2 data-i="h_book"></h2>
-    <p class="lead" data-i="book_note"></p>
+    <p class="lead" id="bnote" data-i="book_note"></p>
     <div class="panel">
       <div class="two">
         <label for="bn"><span data-i="f_name"></span><input id="bn" type="text" autocomplete="name"></label>
@@ -92,9 +92,11 @@
       <div class="lines" id="lines"></div>
       <button type="button" class="linkbtn" id="addline" data-i="add_line"></button>
       <label for="bt"><span data-i="f_notes"></span><textarea id="bt" rows="3"></textarea></label>
+      <input class="hp" id="hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
       <p class="err" id="er" role="alert"></p>
       <div><button type="button" class="pill" id="go" data-i="make"></button></div>
       <div id="res">
+        <p class="stat" id="stat" role="status"></p>
         <label for="rt"><span data-i="res_label"></span><textarea id="rt" readonly></textarea></label>
         <div class="acts">
           <button type="button" class="pill" id="copyres" data-i="copy_msg"></button>
@@ -137,6 +139,8 @@
 
 <noscript><p style="padding:24px;text-align:center">请开启 JavaScript 查看商品价格。Please enable JavaScript to view prices.</p></noscript>
 <script src="data.js"></script>
+<script src="config.js"></script>
 <script src="app.js"></script>
+<script src="remote.js"></script>
 </body>
 </html>
