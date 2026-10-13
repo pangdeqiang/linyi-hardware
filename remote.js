@@ -7,6 +7,7 @@
   const H={apikey:C.key,Authorization:"Bearer "+C.key};
   const CACHE="lyhw-cache-v1";
   const SHOP_KEYS=["hours","place","nameZh","nameEn","addrEn","mapUrl","mapQuery"];
+  const DEF_EMBED=CFG.mapEmbed;
 
   Object.assign(T.zh,{
     submit:"提交预约",submitting:"正在提交…",f_date:"取货/到店日期",
@@ -42,7 +43,7 @@
     }
     if(d.shop){
       SHOP_KEYS.forEach(k=>{if(typeof d.shop[k]==="string"&&d.shop[k].trim())CFG[k]=d.shop[k].trim()});
-      if(d.shop.mapQuery)CFG.mapEmbed="https://maps.google.com/maps?q="+encodeURIComponent(CFG.mapQuery)+"&z=16&output=embed";
+      CFG.mapEmbed=d.shop.mapQuery?"https://maps.google.com/maps?q="+encodeURIComponent(CFG.mapQuery)+"&z=16&output=embed":DEF_EMBED;
       $("v-addr").textContent=CFG.addrEn;
       $("v-link").href=CFG.mapUrl;
       if($("map").getAttribute("src")!==CFG.mapEmbed)$("map").src=CFG.mapEmbed;
