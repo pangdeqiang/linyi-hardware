@@ -7,7 +7,7 @@ const CFG={
   nameEn:"linyihardwarestore.com",
   addrEn:"WH4Q+7R, Kajola, Ogun State, Nigeria",
   mapUrl:"https://maps.app.goo.gl/GJhfdaFFiNZYHAkG7",
-  mapEmbed:"https://maps.google.com/maps?q=WH4Q%2B7R%20Kajola%2C%20Ogun%20State%2C%20Nigeria&z=16&output=embed",
+  mapEmbed:"https://maps.google.com/maps?cid=10585874752440307192&z=17&output=embed",
   smsTo:"08163394568"
 };
 const PHOTOS=window.PHOTOS||{},NB=String.fromCharCode(160);

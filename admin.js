@@ -335,7 +335,7 @@ async function putSecrets(obj){return sb.from("secrets").upsert(Object.entries(o
 
 async function renderSettings(){
   const m=document.getElementById("main");m.replaceChildren();
-  const shop=Object.assign({hours:"08:00 – 20:00",place:"Kajola, Ogun State",nameZh:"临沂五金供应商",nameEn:"linyihardwarestore.com",addrEn:"WH4Q+7R, Kajola, Ogun State, Nigeria",mapQuery:"WH4Q+7R Kajola, Ogun State, Nigeria",mapUrl:"https://maps.app.goo.gl/GJhfdaFFiNZYHAkG7"},await getJson("shop")||{});
+  const shop=Object.assign({hours:"08:00 – 20:00",place:"Kajola, Ogun State",nameZh:"临沂五金供应商",nameEn:"linyihardwarestore.com",addrEn:"WH4Q+7R, Kajola, Ogun State, Nigeria",mapQuery:"",mapUrl:"https://maps.app.goo.gl/GJhfdaFFiNZYHAkG7"},await getJson("shop")||{});
   const sec=await getSecrets();
   const {data:staff}=await sb.from("staff").select("email,note").order("email");
 
@@ -347,7 +347,7 @@ async function renderSettings(){
     h("div",{class:"fm",style:"padding:0"},
       sfld("营业时间","hours","会显示在网站首页和“到店”部分。"),
       sfld("店名(中文)","nameZh"),sfld("店名(英文)","nameEn"),sfld("地区(首页小字)","place"),
-      sfld("地址(英文)","addrEn"),sfld("地图搜索词","mapQuery","网站里的 Google 地图用这个定位。"),sfld("Google 地图链接","mapUrl","“在 Google 地图中打开”按钮用这个链接。")),
+      sfld("地址(英文)","addrEn"),sfld("地图搜索词","mapQuery","一般留空即可。留空时网站使用默认的“临沂五金供应商”地图位置。"),sfld("Google 地图链接","mapUrl","“在 Google 地图中打开”按钮用这个链接。")),
     smsg,h("div",null,h("button",{class:"btn pri",onclick:async e=>{
       const v={};Object.keys(sf).forEach(k=>{v[k]=sf[k].value.trim()});
       e.target.disabled=true;const {error}=await putJson("shop",v);e.target.disabled=false;
